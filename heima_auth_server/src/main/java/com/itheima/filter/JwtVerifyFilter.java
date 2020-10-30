@@ -19,6 +19,10 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 原生BasicAuthenticationFilter过滤器中doFilterInternal方法校验用户是否登录，就是看session中是否有用户信息，
+ * 我们要修改为，验证用户携带的token是否合法，并解析出用户信息，交给SpringSecurity，以便于后续的授权功能可以正常使用
+ */
 public class JwtVerifyFilter extends BasicAuthenticationFilter {
 
     private RsaKeyProperties prop;

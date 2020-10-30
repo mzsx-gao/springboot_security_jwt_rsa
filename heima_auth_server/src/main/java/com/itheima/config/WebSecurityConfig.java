@@ -37,8 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //SpringSecurity配置信息
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-            .authorizeRequests()
-//            .antMatchers("/product").hasAnyRole("USER")
+            .authorizeRequests().antMatchers("/product").hasAnyRole("USER")
             .anyRequest().authenticated()
             .and()
              //增加自定义认证过滤器
